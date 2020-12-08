@@ -1,0 +1,27 @@
+.App {
+  overflow: hidden;
+}
+
+.activeLink {
+  color:#23985F!important;
+}
+
+.bottomnavitem {
+  padding-left: 9.3%;
+  padding-right: 9.3%;
+  color: black;
+  width: 25%;
+
+}
+
+.tab {
+  width: 25%;
+  color: #009860!important;
+}
+
+.tabs {
+  background-color: white;
+  border: none!important;
+  outline: none!important;
+  box-shadow: none!important;
+}
