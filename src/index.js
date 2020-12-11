@@ -16,6 +16,13 @@ const theme = createMuiTheme({
       main: '#009860',
     },
   },
+  typography: {
+    "fontFamily": `"Rubik", sans-serif`,
+    "fontSize": 14,
+    "fontWeightLight": 300,
+    "fontWeightRegular": 400,
+    "fontWeightMedium": 500
+   }
 });
 
 ReactDOM.render(

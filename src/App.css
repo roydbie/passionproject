@@ -1,5 +1,10 @@
 .App {
   overflow: hidden;
+  font-family: 'Rubik', sans-serif;
+}
+
+.header {
+  box-shadow: none;
 }
 
 .activeLink {
@@ -17,6 +22,7 @@
 .tab {
   width: 25%;
   color: #009860!important;
+  font-family: 'Rubik', sans-serif;
 }
 
 .tabs {
@@ -24,4 +30,22 @@
   border: none!important;
   outline: none!important;
   box-shadow: none!important;
+}
+
+.tabpanel {
+  height: 80vh;
+}
+
+.paper {
+  border: none;
+  outline: none;
+}
+
+.headerTitle {
+  flex-grow: 1;
+  text-align: center;
+  /*font-family: 'Russo One', sans-serif;*/
+  letter-spacing: 1px;
+  font-size: 2ch;
+  font-family: 'Alfa Slab One', cursive;
 }

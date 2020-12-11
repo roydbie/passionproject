@@ -6,6 +6,9 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 
+import ExerciseListChest from './ExerciseListChest';
+import ExerciseListBicep from './ExerciseListBicep';
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
@@ -63,16 +66,16 @@ const TabsZelf = () => {
                   <Tab label="tricep" className="tab" {...a11yProps(2)}/>
                   <Tab label="back" className="tab" {...a11yProps(3)}/>
                 </Tabs>
-                <TabPanel value={value} index={0}>
-                  Borst
+                <TabPanel value={value} index={0} className="tabpanel">
+                  <ExerciseListChest />
                 </TabPanel>
-                <TabPanel value={value} index={1}>
-                  Bicep jajajaja
+                <TabPanel value={value} index={1} className="tabpanel">
+                  <ExerciseListBicep />
                 </TabPanel>
-                <TabPanel value={value} index={2}>
+                <TabPanel value={value} index={2} className="tabpanel">
                   Tricep jajaja
                 </TabPanel>
-                <TabPanel value={value} index={3}>
+                <TabPanel value={value} index={3} className="tabpanel">
                   Rug jajajaja
                 </TabPanel>
               </Paper>
