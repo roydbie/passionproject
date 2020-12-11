@@ -6,7 +6,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import FolderIcon from '@material-ui/icons/Folder';
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -26,52 +26,97 @@ export default function ExerciseListBicep() {
       <Grid container>
         <Grid item xs={12} md={6}>
           <Typography variant="h6" className={classes.title}>
-            Chest exercises
+            Bicep exercises
           </Typography>
           <div className={classes.demo}>
             <List>
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Barbell bench press"
+                    primary="Standing barbell curl"
                   />
                 </ListItem>
                 <Divider />
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Dumbell Chest press"
+                    primary="Concentration curl"
                   />
                 </ListItem>
                 <Divider />
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Incline dumbbell Chest press"
+                    primary="EZ-BAR preacher curl"
                   />
                 </ListItem>
                 <Divider />
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Dumbbell flies"
+                    primary="Standing dumbbell curl"
                   />
                 </ListItem>
                 <Divider />
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Chest cable flies"
+                    primary="Incline dumbbell curl"
+                  />
+                </ListItem>
+                <Divider />
+                <ListItem>
+                  <ListItemIcon>
+                    <FitnessCenterIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Standing hammer curl"
+                  />
+                </ListItem>
+                <Divider />
+                <ListItem>
+                  <ListItemIcon>
+                    <FitnessCenterIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Decline dumbbell curl"
+                  />
+                </ListItem>
+                <Divider />
+                <ListItem>
+                  <ListItemIcon>
+                    <FitnessCenterIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Cable rope hammer curl"
+                  />
+                </ListItem>
+                <Divider />
+                <ListItem>
+                  <ListItemIcon>
+                    <FitnessCenterIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Chin up"
+                  />
+                </ListItem>
+                <Divider />
+                <ListItem>
+                  <ListItemIcon>
+                    <FitnessCenterIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Cable bar curl"
                   />
                 </ListItem>
             </List>

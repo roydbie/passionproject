@@ -6,7 +6,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import FolderIcon from '@material-ui/icons/Folder';
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -32,7 +32,7 @@ export default function ExerciseListChest() {
             <List>
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
                     primary="Barbell bench press"
@@ -41,7 +41,7 @@ export default function ExerciseListChest() {
                 <Divider />
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
                     primary="Dumbell Chest press"
@@ -50,7 +50,7 @@ export default function ExerciseListChest() {
                 <Divider />
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
                     primary="Incline dumbbell Chest press"
@@ -59,7 +59,7 @@ export default function ExerciseListChest() {
                 <Divider />
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
                     primary="Dumbbell flies"
@@ -68,7 +68,7 @@ export default function ExerciseListChest() {
                 <Divider />
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
                     primary="Chest cable flies"
@@ -77,7 +77,7 @@ export default function ExerciseListChest() {
                 <Divider />
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
                     primary="Dips"
@@ -86,7 +86,7 @@ export default function ExerciseListChest() {
                 <Divider />
                 <ListItem>
                   <ListItemIcon>
-                    <FolderIcon />
+                    <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
                     primary="Push ups"
