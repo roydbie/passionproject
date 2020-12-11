@@ -8,6 +8,8 @@ import Box from '@material-ui/core/Box';
 
 import ExerciseListChest from './ExerciseListChest';
 import ExerciseListBicep from './ExerciseListBicep';
+import ExerciseListTricep from './ExerciseListTricep';
+import ExerciseListBack from './ExerciseListBack';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -73,10 +75,10 @@ const TabsZelf = () => {
                   <ExerciseListBicep />
                 </TabPanel>
                 <TabPanel value={value} index={2} className="tabpanel">
-                  Tricep jajaja
+                  <ExerciseListTricep />
                 </TabPanel>
                 <TabPanel value={value} index={3} className="tabpanel">
-                  Rug jajajaja
+                  <ExerciseListBack />
                 </TabPanel>
               </Paper>
 
