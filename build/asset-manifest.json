@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/passionproject/static/css/main.f7ae6e3e.chunk.css",
+    "main.js": "/passionproject/static/js/main.2fe344a9.chunk.js",
+    "main.js.map": "/passionproject/static/js/main.2fe344a9.chunk.js.map",
+    "runtime-main.js": "/passionproject/static/js/runtime-main.a46cbdbc.js",
+    "runtime-main.js.map": "/passionproject/static/js/runtime-main.a46cbdbc.js.map",
+    "static/js/2.53600f2e.chunk.js": "/passionproject/static/js/2.53600f2e.chunk.js",
+    "static/js/2.53600f2e.chunk.js.map": "/passionproject/static/js/2.53600f2e.chunk.js.map",
+    "static/js/3.7d8a6f3e.chunk.js": "/passionproject/static/js/3.7d8a6f3e.chunk.js",
+    "static/js/3.7d8a6f3e.chunk.js.map": "/passionproject/static/js/3.7d8a6f3e.chunk.js.map",
+    "index.html": "/passionproject/index.html",
+    "static/css/main.f7ae6e3e.chunk.css.map": "/passionproject/static/css/main.f7ae6e3e.chunk.css.map",
+    "static/js/2.53600f2e.chunk.js.LICENSE.txt": "/passionproject/static/js/2.53600f2e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a46cbdbc.js",
+    "static/js/2.53600f2e.chunk.js",
+    "static/css/main.f7ae6e3e.chunk.css",
+    "static/js/main.2fe344a9.chunk.js"
+  ]
+}

@@ -35,7 +35,7 @@ export default function ExerciseListBack() {
                     <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Close-Grip Bench Press"
+                    primary="Deadlift"
                   />
                 </ListItem>
                 <Divider />
@@ -44,7 +44,7 @@ export default function ExerciseListBack() {
                     <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Cable Rope Tricep Pushdown"
+                    primary="Pull up"
                   />
                 </ListItem>
                 <Divider />
@@ -53,7 +53,7 @@ export default function ExerciseListBack() {
                     <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Lying Triceps Extension"
+                    primary="Bent-Over Row"
                   />
                 </ListItem>
                 <Divider />
@@ -62,7 +62,7 @@ export default function ExerciseListBack() {
                     <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Tricep Dips"
+                    primary="Chest Supported Row"
                   />
                 </ListItem>
                 <Divider />
@@ -71,7 +71,7 @@ export default function ExerciseListBack() {
                     <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Diamond Push-Ups"
+                    primary="Single-Arm Row"
                   />
                 </ListItem>
                 <Divider />
@@ -80,7 +80,7 @@ export default function ExerciseListBack() {
                     <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Bench Dip"
+                    primary="Inverted Row"
                   />
                 </ListItem>
                 <Divider />
@@ -89,7 +89,7 @@ export default function ExerciseListBack() {
                     <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="One-Arm Overhead Extension"
+                    primary="Lat Pulldown"
                   />
                 </ListItem>
                 <Divider />
@@ -98,7 +98,7 @@ export default function ExerciseListBack() {
                     <FitnessCenterIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Standard Push-Up"
+                    primary="Seated Cable Row"
                   />
                 </ListItem>
                 <Divider />
