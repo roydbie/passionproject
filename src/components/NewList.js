@@ -6,6 +6,9 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import { Divider } from '@material-ui/core';
 
+import closegripbenchfoto from '../images/close-grip-bench-press.jpg'; 
+import triceppushdownfoto from '../images/tricep-pushdown.jpg'; 
+
 const Accordion = withStyles({
   root: {
     border: '1px solid rgba(0, 0, 0, .125)',
@@ -45,8 +48,12 @@ const AccordionDetails = withStyles((theme) => ({
   },
 }))(MuiAccordionDetails);
 
-const exercises = [{displayname: "Close-Grip Bench Press", linkname: "/exercises/close-grip-bench-press", panel: "panel1"}, 
-                  {displayname: "Cable Rope Tricep Pushdown", linkname: "/exercises/cable-rope-tricep-pushdown", panel: "panel2"}, 
+const descCloseGripBenchPress = "The close grip bench press differs from the traditional bench press in that you perform the press with a narrower grip. This position places emphasis on building strength and size in the triceps muscles, as well as the chest.";
+
+const descTricepPushdown = "The triceps pushdown is one of the best exercises for triceps development. While the versatile upper-body workout is usually done on a cable machine (a fixture at most gyms), you can also perform a version of the move at home or on the go using a resistance band.";
+
+const exercises = [{displayname: "Close-Grip Bench Press", linkname: "/exercises/close-grip-bench-press", panel: "panel1", imagelink: closegripbenchfoto, descr: descCloseGripBenchPress}, 
+                  {displayname: "Cable Rope Tricep Pushdown", linkname: "/exercises/cable-rope-tricep-pushdown", panel: "panel2", imagelink: triceppushdownfoto, descr: descTricepPushdown}, 
                   {displayname: "Lying Triceps Extension", linkname: "/exercises/lying-triceps-extension", panel: "panel3"}, 
                   {displayname: "Tricep Dips", linkname: "/exercises/tricep-dips", panel: "panel4"},
                   {displayname: "Diamond Push-Ups", linkname: "/exercises/diamond-pushups", panel: "panel5"},
@@ -71,11 +78,10 @@ export default function NewList() {
             <Typography>{exercise.displayname}</Typography>
             </AccordionSummary>
             <AccordionDetails>
-            <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-            </Typography>
+                <Typography>
+                    <img src={exercise.imagelink} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br>
+                    {exercise.descr}
+                </Typography>
             </AccordionDetails>
         </Accordion>
         <Divider />
