@@ -16,16 +16,16 @@ function App() {
         <Router>
           <Header />
           <Switch>
-            <Route exact path="/home">
+            <Route exact path="/passionproject/" >
               <h1>homepage</h1>
             </Route>
-            <Route exact path="/exercises">
+            <Route path="/passionproject/exercises">
               <TabsZelf />
             </Route>
-            <Route exact path="/progress">
+            <Route path="/passionproject/progress">
               <h1>progress</h1>
             </Route>
-            <Route exact path="/extra">
+            <Route path="/passionproject/extra">
               <h1>extra</h1>
             </Route>
           </Switch>
