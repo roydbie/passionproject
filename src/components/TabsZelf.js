@@ -8,7 +8,7 @@ import Box from '@material-ui/core/Box';
 
 
 import ExerciseListBicep from './ExerciseListBicep';
-import ExerciseListTricep from './ExerciseListTricep';
+import ExerciseListChest from './ExerciseListChest';
 import ExerciseListBack from './ExerciseListBack';
 import NewList from './NewList';
 
@@ -63,6 +63,7 @@ const TabsZelf = () => {
                   onChange={handleChange}
                   aria-label="disabled tabs example"
                   className="tabs"
+                  style={{marginTop: '70px'}}
                 >
                   <Tab label="chest" className="tab"  {...a11yProps(0)} />
                   <Tab label="bicep" className="tab" {...a11yProps(1)}/>
@@ -70,13 +71,13 @@ const TabsZelf = () => {
                   <Tab label="back" className="tab" {...a11yProps(3)}/>
                 </Tabs>
                 <TabPanel value={value} index={0} className="tabpanel">
-                  <NewList/>
+                  <ExerciseListChest />
                 </TabPanel>
                 <TabPanel value={value} index={1} className="tabpanel">
                   <ExerciseListBicep />
                 </TabPanel>
                 <TabPanel value={value} index={2} className="tabpanel">
-                  <ExerciseListTricep />
+                  <NewList/>
                 </TabPanel>
                 <TabPanel value={value} index={3} className="tabpanel">
                   <ExerciseListBack />

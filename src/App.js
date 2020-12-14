@@ -7,9 +7,6 @@ import TabsZelf from './components/TabsZelf';
 
 import { BrowserRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-
-import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 
 
 function App() {
@@ -19,23 +16,17 @@ function App() {
         <Router>
           <Header />
           <Switch>
-            <Route exact path="/home">
+            <Route exact path="/passionproject/" >
               <h1>homepage</h1>
             </Route>
-            <Route exact path="/exercises">
+            <Route path="/passionproject/exercises">
               <TabsZelf />
             </Route>
-            <Route exact path="/progress">
+            <Route path="/passionproject/progress">
               <h1>progress</h1>
             </Route>
-            <Route exact path="/extra">
+            <Route path="/passionproject/extra">
               <h1>extra</h1>
-            </Route>
-
-
-            <Route exact path="/exercises/close-grip-bench-press">
-              <h1>Joejoe</h1>
-              <Link to="/exercises"><KeyboardBackspaceIcon /></Link>
             </Route>
           </Switch>
           <BottomNav />
