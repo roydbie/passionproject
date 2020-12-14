@@ -6,10 +6,11 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 
-import ExerciseListChest from './ExerciseListChest';
+
 import ExerciseListBicep from './ExerciseListBicep';
 import ExerciseListTricep from './ExerciseListTricep';
 import ExerciseListBack from './ExerciseListBack';
+import NewList from './NewList';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -54,7 +55,7 @@ const TabsZelf = () => {
 
     return(
         <div>
-            <Paper square className="paper">
+            <Paper square className="paper" style={{boxShadow: 'none'}}>
                 <Tabs
                   value={value}
                   indicatorColor="secondary"
@@ -69,7 +70,7 @@ const TabsZelf = () => {
                   <Tab label="back" className="tab" {...a11yProps(3)}/>
                 </Tabs>
                 <TabPanel value={value} index={0} className="tabpanel">
-                  <ExerciseListChest />
+                  <NewList/>
                 </TabPanel>
                 <TabPanel value={value} index={1} className="tabpanel">
                   <ExerciseListBicep />

@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import { Divider } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,22 +19,31 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const exercises = ["Close-Grip Bench Press", "Cable Rope Tricep Pushdown", "Lying Triceps Extension", "Tricep Dips", 
-                "Diamond Push-Ups", "Bench Dip", "One-Arm Overhead Extension", "Standard Push-Up", "Single-Arm Cable Kick-Back"]; 
+const exercises = [{displayname: "Close-Grip Bench Press", linkname: "/exercises/close-grip-bench-press"}, 
+                  {displayname: "Cable Rope Tricep Pushdown", linkname: "/exercises/cable-rope-tricep-pushdown"}, 
+                  {displayname: "Lying Triceps Extension", linkname: "/exercises/lying-triceps-extension"}, 
+                  {displayname: "Tricep Dips", linkname: "/exercises/tricep-dips"},
+                  {displayname: "Diamond Push-Ups", linkname: "/exercises/diamond-pushups"},
+                  {displayname: "Bench Dip", linkname: "/exercises/bench-dip"},
+                  {displayname: "One-Arm Overhead Extension", linkname: "/exercises/one-arm-overhead-extension"},
+                  {displayname: "Standard Push-Up", linkname: "/exercises/standard-push-up"},
+                  {displayname: "Single-Arm Cable Kick-Back", linkname: "/exercises/single-arm-cable-kick-back"},
+                ]; 
 
 export default function ExerciseListTricep() {
   const classes = useStyles();
 
   const listItems = exercises.map((exercise) =>
+      
       <div>
-        <ListItem>
+        <Link to={exercise.linkname} style={{textDecoration: "none", color: '#474747'}}><ListItem>
           <ListItemIcon>
             <FitnessCenterIcon />
           </ListItemIcon>
           <ListItemText
-            primary={exercise}
+            primary={exercise.displayname}
           />
-        </ListItem>
+        </ListItem></Link>
         <Divider />
       </div>
   );
