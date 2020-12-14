@@ -18,8 +18,25 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+const exercises = ["Close-Grip Bench Press", "Cable Rope Tricep Pushdown", "Lying Triceps Extension", "Tricep Dips", 
+                "Diamond Push-Ups", "Bench Dip", "One-Arm Overhead Extension", "Standard Push-Up", "Single-Arm Cable Kick-Back"]; 
+
 export default function ExerciseListTricep() {
   const classes = useStyles();
+
+  const listItems = exercises.map((exercise) =>
+      <div>
+        <ListItem>
+          <ListItemIcon>
+            <FitnessCenterIcon />
+          </ListItemIcon>
+          <ListItemText
+            primary={exercise}
+          />
+        </ListItem>
+        <Divider />
+      </div>
+  );
 
   return (
     <div className={classes.root}>
@@ -30,86 +47,7 @@ export default function ExerciseListTricep() {
           </Typography>
           <div className={classes.demo}>
             <List>
-                <ListItem>
-                  <ListItemIcon>
-                    <FitnessCenterIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Close-Grip Bench Press"
-                  />
-                </ListItem>
-                <Divider />
-                <ListItem>
-                  <ListItemIcon>
-                    <FitnessCenterIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Cable Rope Tricep Pushdown"
-                  />
-                </ListItem>
-                <Divider />
-                <ListItem>
-                  <ListItemIcon>
-                    <FitnessCenterIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Lying Triceps Extension"
-                  />
-                </ListItem>
-                <Divider />
-                <ListItem>
-                  <ListItemIcon>
-                    <FitnessCenterIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Tricep Dips"
-                  />
-                </ListItem>
-                <Divider />
-                <ListItem>
-                  <ListItemIcon>
-                    <FitnessCenterIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Diamond Push-Ups"
-                  />
-                </ListItem>
-                <Divider />
-                <ListItem>
-                  <ListItemIcon>
-                    <FitnessCenterIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Bench Dip"
-                  />
-                </ListItem>
-                <Divider />
-                <ListItem>
-                  <ListItemIcon>
-                    <FitnessCenterIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="One-Arm Overhead Extension"
-                  />
-                </ListItem>
-                <Divider />
-                <ListItem>
-                  <ListItemIcon>
-                    <FitnessCenterIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Standard Push-Up"
-                  />
-                </ListItem>
-                <Divider />
-                <ListItem>
-                  <ListItemIcon>
-                    <FitnessCenterIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Single-Arm Cable Kick-Back"
-                  />
-                </ListItem>
+                {listItems}
             </List>
           </div>
         </Grid>

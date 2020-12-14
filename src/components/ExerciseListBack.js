@@ -101,15 +101,6 @@ export default function ExerciseListBack() {
                     primary="Seated Cable Row"
                   />
                 </ListItem>
-                <Divider />
-                <ListItem>
-                  <ListItemIcon>
-                    <FitnessCenterIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Single-Arm Cable Kick-Back"
-                  />
-                </ListItem>
             </List>
           </div>
         </Grid>
