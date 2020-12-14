@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" elevation={0}>
+      <AppBar position="fixed" elevation={0}>
         <Toolbar>
           <p className="headerTitle">Battie boys</p>
         </Toolbar>

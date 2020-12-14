@@ -63,6 +63,7 @@ const TabsZelf = () => {
                   onChange={handleChange}
                   aria-label="disabled tabs example"
                   className="tabs"
+                  style={{marginTop: '70px'}}
                 >
                   <Tab label="chest" className="tab"  {...a11yProps(0)} />
                   <Tab label="bicep" className="tab" {...a11yProps(1)}/>

@@ -53,7 +53,7 @@ const descCloseGripBenchPress = "The close grip bench press differs from the tra
 const descTricepPushdown = "The triceps pushdown is one of the best exercises for triceps development. While the versatile upper-body workout is usually done on a cable machine (a fixture at most gyms), you can also perform a version of the move at home or on the go using a resistance band.";
 
 
-const exercises = [{displayname: "Close-Grip Bench Press", linkname: "/exercises/close-grip-bench-press", panel: "panel1", imagelink: closegripbenchfoto, descr: descCloseGripBenchPress, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]}, 
+const exercises = [{displayname: "Close-Grip Bench Press", linkname: "/exercises/close-grip-bench-press", panel: "panel1", imagelink: closegripbenchfoto, descr: descCloseGripBenchPress, users: [{ user: "Roy de Bie", weight: "8x 24kg - 8x 26kg - 6x 28kg"}, { user: "Lars Vermeer", weight: "8x 30kg - 8x 32kg - 6x 34kg"}, { user: "Martijn Creusen", weight: "8x 20kg - 8x 22kg - 6x 24kg"}]}, 
                   {displayname: "Cable Rope Tricep Pushdown", linkname: "/exercises/cable-rope-tricep-pushdown", panel: "panel2", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]}, 
                   {displayname: "Lying Triceps Extension", linkname: "/exercises/lying-triceps-extension", panel: "panel3", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]}, 
                   {displayname: "Tricep Dips", linkname: "/exercises/tricep-dips", panel: "panel4", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
@@ -86,7 +86,7 @@ export default function NewList() {
                     <img src={exercise.imagelink} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br>
                     {exercise.descr} <br></br><br></br>
                     {exercise.users.map(function(user, index){
-                        return <div><b>{user.user}</b> drukt <b>{user.weight}</b><br></br></div>;
+                        return <div><b>{user.user}</b> drukt <br></br><b>{user.weight}</b><br></br><Divider /></div>;
                     })}
                 </Typography>
             </AccordionDetails>
@@ -103,6 +103,8 @@ export default function NewList() {
 
         {listItems}
 
+        <br></br>
+        <br></br>
         <br></br>
     </div>
   );
