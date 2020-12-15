@@ -6,11 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 
-
-import ExerciseListBicep from './ExerciseListBicep';
-import ExerciseListChest from './ExerciseListChest';
-import ExerciseListBack from './ExerciseListBack';
-import NewList from './NewList';
+import NewListTricep from './NewListTricep';
+import NewListChest from './NewListChest';
+import NewListBicep from './NewListBicep';
+import NewListBack from './NewListBack';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -71,16 +70,16 @@ const TabsZelf = () => {
                   <Tab label="back" className="tab" {...a11yProps(3)}/>
                 </Tabs>
                 <TabPanel value={value} index={0} className="tabpanel">
-                  <ExerciseListChest />
+                  <NewListChest/>
                 </TabPanel>
                 <TabPanel value={value} index={1} className="tabpanel">
-                  <ExerciseListBicep />
+                  <NewListBicep />
                 </TabPanel>
                 <TabPanel value={value} index={2} className="tabpanel">
-                  <NewList/>
+                  <NewListTricep/>
                 </TabPanel>
                 <TabPanel value={value} index={3} className="tabpanel">
-                  <ExerciseListBack />
+                  <NewListBack />
                 </TabPanel>
               </Paper>
 

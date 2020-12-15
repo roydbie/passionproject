@@ -24,7 +24,7 @@ export default function BottomNav() {
 
   return (
     <footer className={classes.root}>
-        <NavLink exact to="/passionproject" activeClassName="activeLink" className="bottomnavitem"><NotificationsNoneIcon /></NavLink>
+        <NavLink exact to="/passionproject/" activeClassName="activeLink" className="bottomnavitem"><NotificationsNoneIcon /></NavLink>
         <NavLink to="/passionproject/exercises" activeClassName="activeLink" className="bottomnavitem"><FitnessCenterIcon /></NavLink>
         <NavLink to="/passionproject/progress" activeClassName="activeLink" className="bottomnavitem"><TimelineIcon /></NavLink>
         <NavLink to="/passionproject/extra" activeClassName="activeLink" className="bottomnavitem"><MoreHorizIcon /></NavLink>

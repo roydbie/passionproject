@@ -24,6 +24,12 @@
   font-family: 'Rubik', sans-serif;
 }
 
+.tabHome {
+  width: 50%;
+  color: #009860!important;
+  font-family: 'Rubik', sans-serif;
+}
+
 .tabs {
   background-color: white;
   border: none!important;
