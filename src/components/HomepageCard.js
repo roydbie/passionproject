@@ -13,7 +13,7 @@ import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    width: '100%',
   },
 });
 

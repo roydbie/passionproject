@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/passionproject/static/css/main.fcbbdf44.chunk.css",
-    "main.js": "/passionproject/static/js/main.a73a7763.chunk.js",
-    "main.js.map": "/passionproject/static/js/main.a73a7763.chunk.js.map",
+    "main.js": "/passionproject/static/js/main.3275f70f.chunk.js",
+    "main.js.map": "/passionproject/static/js/main.3275f70f.chunk.js.map",
     "runtime-main.js": "/passionproject/static/js/runtime-main.bbc6ecab.js",
     "runtime-main.js.map": "/passionproject/static/js/runtime-main.bbc6ecab.js.map",
     "static/js/2.8835b6df.chunk.js": "/passionproject/static/js/2.8835b6df.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.bbc6ecab.js",
     "static/js/2.8835b6df.chunk.js",
     "static/css/main.fcbbdf44.chunk.css",
-    "static/js/main.a73a7763.chunk.js"
+    "static/js/main.3275f70f.chunk.js"
   ]
 }
