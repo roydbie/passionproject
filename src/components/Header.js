@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     boxShadow: "none",
+    backgroundColor: '#292B4E'
   }
 }));
 

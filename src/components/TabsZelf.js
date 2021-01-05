@@ -64,10 +64,10 @@ const TabsZelf = () => {
                   className="tabs"
                   style={{marginTop: '70px'}}
                 >
-                  <Tab label="chest" className="tab"  {...a11yProps(0)} />
-                  <Tab label="bicep" className="tab" {...a11yProps(1)}/>
-                  <Tab label="tricep" className="tab" {...a11yProps(2)}/>
-                  <Tab label="back" className="tab" {...a11yProps(3)}/>
+                  <Tab label="chest" className="tab"  {...a11yProps(0)} classes={{selected: 'selected' }}/>
+                  <Tab label="bicep" className="tab" {...a11yProps(1)} classes={{selected: 'selected' }}/>
+                  <Tab label="tricep" className="tab" {...a11yProps(2)} classes={{selected: 'selected' }}/>
+                  <Tab label="back" className="tab" {...a11yProps(3)} classes={{selected: 'selected' }}/>
                 </Tabs>
                 <TabPanel value={value} index={0} className="tabpanel">
                   <NewListChest/>

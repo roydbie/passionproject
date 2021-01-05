@@ -24,6 +24,30 @@
   font-family: 'Rubik', sans-serif;
 }
 
+.tab.selected > .MuiTab-wrapper {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #009860!important;
+  color: white;
+  padding: 6px 0px;
+  border-radius: 5px;
+}
+
+.MuiTab-wrapper {
+  background-color: #dedede!important;
+  color: black;
+  padding: 6px 0px;
+  border-radius: 5px;
+}
+
+.removeLine {
+  border: none!important;
+}
+
+
 .tabHome {
   width: 50%;
   color: #009860!important;
@@ -31,7 +55,7 @@
 }
 
 .tabs {
-  background-color: white;
+  background-color: #292B4E;
   border: none!important;
   outline: none!important;
   box-shadow: none!important;

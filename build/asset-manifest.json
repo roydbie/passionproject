@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/passionproject/static/css/main.fcbbdf44.chunk.css",
-    "main.js": "/passionproject/static/js/main.3275f70f.chunk.js",
-    "main.js.map": "/passionproject/static/js/main.3275f70f.chunk.js.map",
+    "main.css": "/passionproject/static/css/main.6c91a3e4.chunk.css",
+    "main.js": "/passionproject/static/js/main.97bdf93e.chunk.js",
+    "main.js.map": "/passionproject/static/js/main.97bdf93e.chunk.js.map",
     "runtime-main.js": "/passionproject/static/js/runtime-main.bbc6ecab.js",
     "runtime-main.js.map": "/passionproject/static/js/runtime-main.bbc6ecab.js.map",
     "static/js/2.8835b6df.chunk.js": "/passionproject/static/js/2.8835b6df.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.e40a3c2d.chunk.js": "/passionproject/static/js/3.e40a3c2d.chunk.js",
     "static/js/3.e40a3c2d.chunk.js.map": "/passionproject/static/js/3.e40a3c2d.chunk.js.map",
     "index.html": "/passionproject/index.html",
-    "static/css/main.fcbbdf44.chunk.css.map": "/passionproject/static/css/main.fcbbdf44.chunk.css.map",
+    "static/css/main.6c91a3e4.chunk.css.map": "/passionproject/static/css/main.6c91a3e4.chunk.css.map",
     "static/js/2.8835b6df.chunk.js.LICENSE.txt": "/passionproject/static/js/2.8835b6df.chunk.js.LICENSE.txt",
     "static/media/close-grip-bench-press.4cff275a.jpg": "/passionproject/static/media/close-grip-bench-press.4cff275a.jpg",
     "static/media/tricep-pushdown.3d994ec3.jpg": "/passionproject/static/media/tricep-pushdown.3d994ec3.jpg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.bbc6ecab.js",
     "static/js/2.8835b6df.chunk.js",
-    "static/css/main.fcbbdf44.chunk.css",
-    "static/js/main.3275f70f.chunk.js"
+    "static/css/main.6c91a3e4.chunk.css",
+    "static/js/main.97bdf93e.chunk.js"
   ]
 }
