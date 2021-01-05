@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     boxShadow: "none",
-    backgroundColor: '#292B4E'
+
   }
 }));
 
@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <div className={classes.root}>
       <AppBar position="fixed" elevation={0}>
-        <Toolbar>
+        <Toolbar style={{backgroundColor: '#292B4E'}}>
           <p className="headerTitle">Battie boys</p>
         </Toolbar>
       </AppBar>

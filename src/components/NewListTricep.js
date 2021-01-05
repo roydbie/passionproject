@@ -77,7 +77,7 @@ export default function NewListTricep() {
   const listItems = exercises.map((exercise) =>
       
       <div>
-        <Accordion square expanded={expanded === exercise.panel} onChange={handleChange(exercise.panel)} style={{border: 'none'}}>
+        <Accordion square className="exerciseBlock" expanded={expanded === exercise.panel} onChange={handleChange(exercise.panel)} style={{border: 'none'}}>
             <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" style={{paddingLeft: '25px'}}>
             <Typography>{exercise.displayname}</Typography>
             </AccordionSummary>
@@ -97,7 +97,7 @@ export default function NewListTricep() {
 
   return (
     <div>
-        <Typography variant="h6">
+        <Typography variant="h6" style={{color: 'white'}}>
             Tricep exercises
         </Typography><br></br>
 

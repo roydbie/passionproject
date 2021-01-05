@@ -65,7 +65,7 @@ const TabsZelf = () => {
                   style={{marginTop: '70px'}}
                 >
                   <Tab label="chest" className="tab"  {...a11yProps(0)} classes={{selected: 'selected' }}/>
-                  <Tab label="bicep" className="tab" {...a11yProps(1)} classes={{selected: 'selected' }}/>
+                  <Tab label="Bicep" className="tab" {...a11yProps(1)} classes={{selected: 'selected' }}/>
                   <Tab label="tricep" className="tab" {...a11yProps(2)} classes={{selected: 'selected' }}/>
                   <Tab label="back" className="tab" {...a11yProps(3)} classes={{selected: 'selected' }}/>
                 </Tabs>

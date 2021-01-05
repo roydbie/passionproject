@@ -14,7 +14,10 @@ import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 const useStyles = makeStyles({
   root: {
     width: '100%',
+    backgroundColor: '#353766',
+    color: 'white'
   },
+
 });
 
 export default function HomepageCard() {
@@ -32,7 +35,7 @@ export default function HomepageCard() {
             <Typography gutterBottom variant="subtitle2" component="h2" align="center">
                 Martijn Creusen
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography variant="body2" component="p">
                 Martijn Creusen increased his weight with the bicep curl dumbbell. His old weight was 10kg and he progressed to 12kg. Congratulations!
             </Typography>
             </CardContent>
@@ -59,7 +62,7 @@ export default function HomepageCard() {
             <Typography gutterBottom variant="subtitle2" component="h2" align="center">
                 Joep van Antwerpen
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography variant="body2" component="p">
                 Joep van Antwerpen increased his weight with the incline dumbbell press. His old weight was 30kg and he progressed to 32kg. Congratulations!
             </Typography>
             </CardContent>

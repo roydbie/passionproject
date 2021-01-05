@@ -61,8 +61,8 @@ const TabsHomepage = () => {
                   className="tabs"
                   style={{marginTop: '70px'}}
                 >
-                  <Tab label="everyone" className="tabHome"  {...a11yProps(0)} />
-                  <Tab label="my friends" className="tabHome" {...a11yProps(1)}/>
+                  <Tab label="everyone" className="tabHome"  {...a11yProps(0)} classes={{selected: 'selected' }} />
+                  <Tab label="my friends" className="tabHome" {...a11yProps(1)} classes={{selected: 'selected' }} />
                 </Tabs>
                 <TabPanel value={value} index={0} className="tabpanel">
                   <HomepageCard/>

@@ -12,6 +12,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Chart from './components/Chart';
 import Chart2 from './components/Chart2';
 
+import TabsPersonal from './components/personal-page/TabsZelf';
+
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
           <Switch>
             <Route exact path="/passionproject/" >
               <TabsHomepage />
+            </Route>
+            <Route exact path="/passionproject/personal">
+              <TabsPersonal />
             </Route>
             <Route exact path="/passionproject/exercises">
               <TabsZelf />
