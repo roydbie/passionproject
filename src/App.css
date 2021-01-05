@@ -23,7 +23,7 @@ html, body {
   padding-left: 3.5%;
   padding-right: 3.5%;
   color: white;
-  margin-left: 5.3%;
+  margin-left: 5.5%;
   vertical-align: middle;
 }
 
@@ -115,4 +115,10 @@ html, body {
   color: white!important;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+
+.listItemPersonal {
+  background-color: #353766;
+  border-radius: 10px;
+  color: white;
 }

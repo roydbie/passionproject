@@ -7,6 +7,8 @@ import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 
 import HomepageCard from './HomepageCard';
+import HomepageCardFriends from './HomepageCardFriends';
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -68,7 +70,7 @@ const TabsHomepage = () => {
                   <HomepageCard/>
                 </TabPanel>
                 <TabPanel value={value} index={1} className="tabpanel">
-                  <h1>sdfsdf</h1>
+                  <HomepageCardFriends/>
                 </TabPanel>
               </Paper>
 

@@ -92,9 +92,6 @@ export default function NewListChest() {
 
   return (
     <div>
-        <Typography variant="h6" style={{color: 'white'}}>
-            Chest exercises
-        </Typography><br></br>
 
         {listItems}
 

@@ -11,6 +11,8 @@ import PersonalChest from './PersonalChest';
 import PersonalBicep from './PersonalBicep';
 import PersonalBack from './PersonalBack';
 
+import ChestExercises from './ChestExercises';
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
@@ -70,7 +72,10 @@ const TabsZelf = () => {
                   <Tab label="back" className="tab" {...a11yProps(3)} classes={{selected: 'selected' }}/>
                 </Tabs>
                 <TabPanel value={value} index={0} className="tabpanel">
-                  <PersonalChest/>
+                  <Typography variant="h6" style={{color: 'white'}}>
+                      Chest exercises
+                  </Typography><br></br>
+                  <ChestExercises />
                 </TabPanel>
                 <TabPanel value={value} index={1} className="tabpanel">
                   <PersonalBicep />
