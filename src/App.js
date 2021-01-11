@@ -4,9 +4,15 @@ import './App.css';
 import BottomNav from './components/BottomNav';
 import Header from './components/Header';
 import TabsZelf from './components/TabsZelf';
+import TabsHomepage from './components/TabsHomepage';
 
 import { BrowserRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Chart from './components/Chart';
+import Chart2 from './components/Chart2';
+
+import TabsPersonal from './components/personal-page/TabsZelf';
 
 
 function App() {
@@ -16,16 +22,21 @@ function App() {
         <Router>
           <Header />
           <Switch>
-            <Route exact path="/home">
-              <h1>homepage</h1>
+            <Route exact path="/passionproject/" >
+              <TabsHomepage />
             </Route>
-            <Route exact path="/exercises">
+            <Route exact path="/passionproject/personal">
+              <TabsPersonal />
+            </Route>
+            <Route exact path="/passionproject/exercises">
               <TabsZelf />
             </Route>
-            <Route exact path="/progress">
-              <h1>progress</h1>
+            <Route exact path="/passionproject/progress">
+              <br></br><br></br><br></br><h1>progress</h1>
+              <Chart /><br></br><br></br>
+              <Chart2 />
             </Route>
-            <Route exact path="/extra">
+            <Route exact path="/passionproject/extra">
               <h1>extra</h1>
             </Route>
           </Switch>
