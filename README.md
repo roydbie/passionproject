@@ -1,8 +1,9 @@
-# Getting Started with Create React App
+# Battie Boys
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Battie Boys is een fitness app die stimuleert om samen te sporten. Vind je niet dat al die apps in de store teveel gefocust zijn op je eigen progressie? 
+Battie Boys houdt jouw persoonlijke resultaten bij maar ook die van je vrienden! Zo ben je er altijd van op de hoogte hoeveel jouw beste groeimaat drukt!
 
-## Available Scripts
+## Installation and usage
 
 In the project directory, you can run:
 
