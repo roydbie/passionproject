@@ -7,11 +7,10 @@ import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 
 import PersonalTricep from './PersonalTricep';
-import PersonalChest from './PersonalChest';
-import PersonalBicep from './PersonalBicep';
 import PersonalBack from './PersonalBack';
 
 import ChestExercises from './ChestExercises';
+import BicepExercises from './BicepExercises';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -78,7 +77,10 @@ const TabsZelf = () => {
                   <ChestExercises />
                 </TabPanel>
                 <TabPanel value={value} index={1} className="tabpanel">
-                  <PersonalBicep />
+                  <Typography variant="h6" style={{color: 'white'}}>
+                      Bicep exercises
+                  </Typography><br></br>
+                  <BicepExercises />
                 </TabPanel>
                 <TabPanel value={value} index={2} className="tabpanel">
                   <PersonalTricep/>

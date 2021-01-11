@@ -15,6 +15,9 @@ const theme = createMuiTheme({
     secondary: {
       main: '#39D1E0',
     },
+    text: {
+      secondary: 'white',
+    }
   },
   typography: {
     "fontFamily": `"Rubik", sans-serif`,
