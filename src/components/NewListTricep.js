@@ -5,7 +5,10 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 
-import closegripbenchfoto from '../images/close-grip-bench-press.jpg'; 
+import closegripbenchfoto from '../images/close-grip-bench-press.gif'; 
+import triceppushdownfoto from '../images/tricep-pushdown.gif';
+import singlearmcablekickbackfoto from '../images/single-arm-cable-kickback.gif';
+import tricepdipsfoto from '../images/tricep-dips.gif';
 import { db } from '../services/firebase';
 
 const Accordion = withStyles({
@@ -135,14 +138,23 @@ class NewListTricep extends Component {
                   </AccordionSummary>
                   <AccordionDetails>
                       <Typography>
-                      <img src={closegripbenchfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br>
+                      {
+                        (() => {switch (data.idname) {
+                            case "close-grip-bench-press":   return <div><img src={closegripbenchfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "tricep-dips":   return <div><img src={tricepdipsfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "cable-rope-tricep-pushdown":   return <div><img src={triceppushdownfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "single-arm-cable-kickback":   return <div><img src={singlearmcablekickbackfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            default:      return "";
+                          }
+                        })()
+                      }
                       { 
                           this.state.closegripbenchpressPeopleArray && 
                           this.state.closegripbenchpressPeopleArray.map( exercise => {
                               if(data.idname === "close-grip-bench-press"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -160,7 +172,7 @@ class NewListTricep extends Component {
                               if(data.idname === "tricep-dips"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -178,7 +190,7 @@ class NewListTricep extends Component {
                               if(data.idname === "cable-rope-tricep-pushdown"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -196,7 +208,7 @@ class NewListTricep extends Component {
                               if(data.idname === "single-arm-cable-kickback"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {

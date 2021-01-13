@@ -5,7 +5,10 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 
-import closegripbenchfoto from '../images/close-grip-bench-press.jpg'; 
+import barbellcurlfoto from '../images/barbell-curl.gif'; 
+import standinghammercurlfoto from '../images/hammer-curl.gif';
+import cableropehammercurlfoto from '../images/cable-bicepcurl.gif';
+import concentrationcurlfoto from '../images/concentration-curl.gif';
 import { db } from '../services/firebase';
 
 const Accordion = withStyles({
@@ -131,14 +134,23 @@ class NewListBicep extends Component {
                   </AccordionSummary>
                   <AccordionDetails>
                       <Typography>
-                      <img src={closegripbenchfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br>
+                      {
+                        (() => {switch (data.idname) {
+                            case "standing-barbell-curl":   return <div><img src={barbellcurlfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "standing-hammer-curl":   return <div><img src={standinghammercurlfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "cable-rope-hammer-curl":   return <div><img src={cableropehammercurlfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "concentration-curl":   return <div><img src={concentrationcurlfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            default:      return "";
+                          }
+                        })()
+                      }
                       { 
                           this.state.standingbarbellcurlPeopleArray && 
                           this.state.standingbarbellcurlPeopleArray.map( exercise => {
                               if(data.idname === "standing-barbell-curl"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -156,7 +168,7 @@ class NewListBicep extends Component {
                               if(data.idname === "standing-hammer-curl"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -174,7 +186,7 @@ class NewListBicep extends Component {
                               if(data.idname === "cable-rope-hammer-curl"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -192,7 +204,7 @@ class NewListBicep extends Component {
                               if(data.idname === "concentration-curl"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {

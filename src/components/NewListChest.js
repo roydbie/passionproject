@@ -5,7 +5,10 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 
-import closegripbenchfoto from '../images/close-grip-bench-press.jpg'; 
+import dumbbellpressfoto from '../images/dumbbell-press.gif';
+import inclinebenchpressfoto from '../images/incline-benchpress.gif';
+import declinebenchpressfoto from '../images/decline-benchpress.gif';
+import chestfliesfoto from '../images/chest-flies.gif';
 import { db } from '../services/firebase';
 
 const Accordion = withStyles({
@@ -131,14 +134,24 @@ class NewListChest extends Component {
                   </AccordionSummary>
                   <AccordionDetails>
                       <Typography>
-                      <img src={closegripbenchfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br>
+                      {
+                        (() => {switch (data.idname) {
+                            case "dumbbell-press":   return <div><img src={dumbbellpressfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "incline-bench-press":   return <div><img src={inclinebenchpressfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "close-grip-chest-press":   return <div><img src={declinebenchpressfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "chest-cable-flies":   return <div><img src={chestfliesfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            default:      return "";
+                          }
+                        })()
+                      }
                       { 
                           this.state.dumbbellpressPeopleArray && 
                           this.state.dumbbellpressPeopleArray.map( exercise => {
                               if(data.idname === "dumbbell-press"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> 
+                                      <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -156,7 +169,7 @@ class NewListChest extends Component {
                               if(data.idname === "incline-bench-press"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -174,7 +187,7 @@ class NewListChest extends Component {
                               if(data.idname === "close-grip-chest-press"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -192,7 +205,7 @@ class NewListChest extends Component {
                               if(data.idname === "chest-cable-flies"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {

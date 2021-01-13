@@ -5,7 +5,10 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 
-import closegripbenchfoto from '../images/close-grip-bench-press.jpg'; 
+import deadliftfoto from '../images/deadlift.gif'; 
+import latpulldownfoto from '../images/latpulldown.gif'; 
+import cablerowfoto from '../images/cablerow.gif'; 
+import chestsupportedrowfoto from '../images/chestsupportedrow.gif'; 
 import { db } from '../services/firebase';
 
 const Accordion = withStyles({
@@ -135,14 +138,23 @@ class NewListBack extends Component {
                   </AccordionSummary>
                   <AccordionDetails>
                       <Typography>
-                      <img src={closegripbenchfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br>
+                      {
+                        (() => {switch (data.idname) {
+                            case "deadlift":   return <div><img src={deadliftfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "lat-pulldown":   return <div><img src={latpulldownfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "seated-cable-row":   return <div><img src={cablerowfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            case "chest-supported-row":   return <div><img src={chestsupportedrowfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br></div>;
+                            default:      return "";
+                          }
+                        })()
+                      }
                       { 
                           this.state.deadliftPeopleArray && 
                           this.state.deadliftPeopleArray.map( exercise => {
                               if(data.idname === "deadlift"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -160,7 +172,7 @@ class NewListBack extends Component {
                               if(data.idname === "lat-pulldown"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -178,7 +190,7 @@ class NewListBack extends Component {
                               if(data.idname === "seated-cable-row"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
@@ -196,7 +208,7 @@ class NewListBack extends Component {
                               if(data.idname === "chest-supported-row"){
                                 return (
                                   <div>
-                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                      <p key={count}><b>{exercise.name}:</b> <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
                                   </div>
                               )
                               } else {
