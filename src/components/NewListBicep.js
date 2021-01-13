@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
-import { Divider } from '@material-ui/core';
 
 import closegripbenchfoto from '../images/close-grip-bench-press.jpg'; 
-import triceppushdownfoto from '../images/tricep-pushdown.jpg'; 
+import { db } from '../services/firebase';
 
 const Accordion = withStyles({
   root: {
-    border: '1px solid rgba(0, 0, 0, .125)',
+    border: 'none',
     boxShadow: 'none',
     '&:not(:last-child)': {
-      borderBottom: 0,
+      borderBottom: 'none',
     },
     '&:before': {
       display: 'none',
@@ -23,7 +22,9 @@ const Accordion = withStyles({
       margin: 'auto',
     },
   },
-  expanded: {},
+  expanded: {
+    marginBottom: '10px!important'
+  },
 })(MuiAccordion);
 
 const AccordionSummary = withStyles({
@@ -48,65 +49,185 @@ const AccordionDetails = withStyles((theme) => ({
   },
 }))(MuiAccordionDetails);
 
-const descCloseGripBenchPress = "The close grip bench press differs from the traditional bench press in that you perform the press with a narrower grip. This position places emphasis on building strength and size in the triceps muscles, as well as the chest.";
+class NewListBicep extends Component {
+  state = {
+    exercisesArray: null,
+    standingbarbellcurlPeopleArray: null,
+    standinghammercurlPeopleArray: null,
+    cableropehammercurlPeopleArray: null,
+    concentrationcurlPeopleArray: null
+  }
 
-const descTricepPushdown = "The triceps pushdown is one of the best exercises for triceps development. While the versatile upper-body workout is usually done on a cable machine (a fixture at most gyms), you can also perform a version of the move at home or on the go using a resistance band.";
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: ''
+    };
+  }
 
-
-const exercises = [{displayname: "Standing barbell curl", linkname: "/exercises/close-grip-bench-press", panel: "panel1", imagelink: closegripbenchfoto, descr: descCloseGripBenchPress, users: [{ user: "Roy de Bie", weight: "8x 24kg - 8x 26kg - 6x 28kg"}, { user: "Lars Vermeer", weight: "8x 30kg - 8x 32kg - 6x 34kg"}, { user: "Martijn Creusen", weight: "8x 20kg - 8x 22kg - 6x 24kg"}]}, 
-                  {displayname: "Concentration curl", linkname: "/exercises/cable-rope-tricep-pushdown", panel: "panel2", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]}, 
-                  {displayname: "EZ-BAR preacher curl", linkname: "/exercises/lying-triceps-extension", panel: "panel3", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]}, 
-                  {displayname: "Standing dumbbell curl", linkname: "/exercises/tricep-dips", panel: "panel4", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                  {displayname: "Incline dumbbell curl", linkname: "/exercises/diamond-pushups", panel: "panel5", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                  {displayname: "Standing hammer curl", linkname: "/exercises/bench-dip", panel: "panel6", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                  {displayname: "Decline dumbbell curl", linkname: "/exercises/one-arm-overhead-extension", panel: "panel7", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                  {displayname: "Cable rope hammer curl", linkname: "/exercises/one-arm-overhead-extension", panel: "panel8", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                  {displayname: "Chin up", linkname: "/exercises/one-arm-overhead-extension", panel: "panel9", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                  {displayname: "Cable bar curl", linkname: "/exercises/one-arm-overhead-extension", panel: "panel10", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                ]; 
-
-                
-
-
-export default function NewListBicep() {
-  const [expanded, setExpanded] = React.useState('');
-
-  const handleChange = (panel) => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : false);
-  };
-
-  const listItems = exercises.map((exercise) =>
-      
-      <div>
-        <Accordion square className="exerciseBlock" expanded={expanded === exercise.panel} onChange={handleChange(exercise.panel)} style={{border: 'none'}}>
-            <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" style={{paddingLeft: '25px'}}>
-            <Typography>{exercise.displayname}</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-                <Typography>
-                    <img src={exercise.imagelink} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br>
-                    {exercise.descr} <br></br><br></br>
-                    {exercise.users.map(function(user, index){
-                        return <div><b>{user.user}</b> drukt <br></br><b>{user.weight}</b><br></br><Divider /></div>;
-                    })}
-                </Typography>
-            </AccordionDetails>
-        </Accordion>
-        <Divider />
-      </div>
-  );
-
-  return (
-    <div>
-        <Typography variant="h6" style={{color: 'white'}}>
-            Bicep exercises
-        </Typography><br></br>
-
-        {listItems}
-
-        <br></br>
-        <br></br>
-        <br></br>
-    </div>
-  );
+  componentDidMount(){
+    // get all exercises
+    db.collection('exercises-bicep').get().then( snapshot => {
+        const exercisesArray = [];
+        snapshot.forEach( doc => {
+            const data = doc.data();
+            exercisesArray.push(data);
+        })
+        this.setState({exercisesArray: exercisesArray})
+    }).catch( error => console.log(error));
+    // get users of standing barbell curl
+    db.collection('exercises-bicep').doc('standing-barbell-curl').collection('people').get().then( snapshot => {
+        const standingbarbellcurlPeopleArray = [];
+        snapshot.forEach( doc => {
+            const data = doc.data();
+            standingbarbellcurlPeopleArray.push(data);
+        })
+        this.setState({standingbarbellcurlPeopleArray: standingbarbellcurlPeopleArray})
+    }).catch( error => console.log(error));
+    // get users of standing-hammer-curl
+    db.collection('exercises-bicep').doc('standing-hammer-curl').collection('people').get().then( snapshot => {
+      const standinghammercurlPeopleArray = [];
+      snapshot.forEach( doc => {
+          const data = doc.data();
+          standinghammercurlPeopleArray.push(data);
+      })
+      this.setState({standinghammercurlPeopleArray: standinghammercurlPeopleArray})
+    }).catch( error => console.log(error));
+    // get users of cable rope hammer curl
+    db.collection('exercises-bicep').doc('cable-rope-hammer-curl').collection('people').get().then( snapshot => {
+      const cableropehammercurlPeopleArray = [];
+      snapshot.forEach( doc => {
+          const data = doc.data();
+          cableropehammercurlPeopleArray.push(data);
+      })
+      this.setState({cableropehammercurlPeopleArray: cableropehammercurlPeopleArray})
+    }).catch( error => console.log(error));
+    // get users of concentration curl
+    db.collection('exercises-bicep').doc('concentration-curl').collection('people').get().then( snapshot => {
+      const concentrationcurlPeopleArray = [];
+      snapshot.forEach( doc => {
+          const data = doc.data();
+          concentrationcurlPeopleArray.push(data);
+      })
+      this.setState({concentrationcurlPeopleArray: concentrationcurlPeopleArray})
+    }).catch( error => console.log(error));
 }
+
+  render() {
+
+    const handleChange = (panel) => (event, newExpanded) => {
+      this.setState({expanded: newExpanded ? panel : false});
+    };
+
+    let count = 0;
+    const newData = this.state.exercisesArray && this.state.exercisesArray.map( (data) => {
+      count = count + 1;
+      return (
+          <div>
+            <div>
+              <Accordion className="exerciseBlock" expanded={this.state.expanded === count} onChange={handleChange(count)} style={{border: 'none'}}>
+                  <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" style={{paddingLeft: '25px'}}>
+                  <Typography>{data.name}</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                      <Typography>
+                      <img src={closegripbenchfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br>
+                      { 
+                          this.state.standingbarbellcurlPeopleArray && 
+                          this.state.standingbarbellcurlPeopleArray.map( exercise => {
+                              if(data.idname === "standing-barbell-curl"){
+                                return (
+                                  <div>
+                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                  </div>
+                              )
+                              } else {
+                                return (
+                                  <div>
+                                     
+                                  </div>
+                              )
+                              }
+                          })
+                      }
+                      { 
+                          this.state.standinghammercurlPeopleArray && 
+                          this.state.standinghammercurlPeopleArray.map( exercise => {
+                              if(data.idname === "standing-hammer-curl"){
+                                return (
+                                  <div>
+                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                  </div>
+                              )
+                              } else {
+                                return (
+                                  <div>
+                                     
+                                  </div>
+                              )
+                              }
+                          })
+                      }
+                      { 
+                          this.state.cableropehammercurlPeopleArray && 
+                          this.state.cableropehammercurlPeopleArray.map( exercise => {
+                              if(data.idname === "cable-rope-hammer-curl"){
+                                return (
+                                  <div>
+                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                  </div>
+                              )
+                              } else {
+                                return (
+                                  <div>
+                                     
+                                  </div>
+                              )
+                              }
+                          })
+                      }
+                      { 
+                          this.state.concentrationcurlPeopleArray && 
+                          this.state.concentrationcurlPeopleArray.map( exercise => {
+                              if(data.idname === "concentration-curl"){
+                                return (
+                                  <div>
+                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                  </div>
+                              )
+                              } else {
+                                return (
+                                  <div>
+                                     
+                                  </div>
+                              )
+                              }
+                          })
+                      }
+                      </Typography>
+                  </AccordionDetails>
+              </Accordion>
+            </div>    
+          </div>
+          
+      )
+      
+    });
+
+    return (
+      <div>
+          <Typography variant="h6" style={{color: 'white'}}>
+              Bicep exercises
+          </Typography><br></br>
+
+          {newData}
+
+          <br></br>
+          <br></br>
+          <br></br>
+      </div>
+    )
+  }
+}
+
+export default NewListBicep;

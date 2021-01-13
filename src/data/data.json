@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "exercisename": "Bench press",
+        "link": "/exercises/close-grip-bench-press",
+        "imagelink": "closegripbenchfoto",
+        "people": [
+            {"name": "Lars Vermeer", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Roy de Bie", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Joep van Antwerpen", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}]
+    },
+    {
+        "id": 2,
+        "exercisename": "Incline Bench press",
+        "link": "/exercises/close-grip-bench-press",
+        "imagelink": "closegripbenchfoto",
+        "people": [
+            {"name": "Lars Vermeer", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Roy de Bie", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Joep van Antwerpen", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}]
+    },
+    {
+        "id": 3,
+        "exercisename": "Dumbbell press",
+        "link": "/exercises/close-grip-bench-press",
+        "imagelink": "closegripbenchfoto",
+        "people": [
+            {"name": "Lars Vermeer", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Roy de Bie", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Joep van Antwerpen", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}]
+    },
+    {
+        "id": 4,
+        "exercisename": "Decline Bench press",
+        "link": "/exercises/close-grip-bench-press",
+        "imagelink": "closegripbenchfoto",
+        "people": [
+            {"name": "Lars Vermeer", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Roy de Bie", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Joep van Antwerpen", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}]
+    },
+    {
+        "id": 5,
+        "exercisename": "Chest flies cable",
+        "link": "/exercises/close-grip-bench-press",
+        "imagelink": "closegripbenchfoto",
+        "people": [
+            {"name": "Lars Vermeer", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Roy de Bie", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Joep van Antwerpen", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}]
+    },
+    {
+        "id": 6,
+        "exercisename": "Close grip chest press",
+        "link": "/exercises/close-grip-bench-press",
+        "imagelink": "closegripbenchfoto",
+        "people": [
+            {"name": "Lars Vermeer", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Roy de Bie", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}, 
+            {"name": "Joep van Antwerpen", "weight": "10x 60kg | 10x 70kg | 8x 80kg"}]
+    }
+]

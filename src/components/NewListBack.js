@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
-import { Divider } from '@material-ui/core';
 
 import closegripbenchfoto from '../images/close-grip-bench-press.jpg'; 
-import triceppushdownfoto from '../images/tricep-pushdown.jpg'; 
+import { db } from '../services/firebase';
 
 const Accordion = withStyles({
   root: {
-    border: '1px solid rgba(0, 0, 0, .125)',
+    border: 'none',
     boxShadow: 'none',
     '&:not(:last-child)': {
-      borderBottom: 0,
+      borderBottom: 'none',
     },
     '&:before': {
       display: 'none',
@@ -23,7 +22,9 @@ const Accordion = withStyles({
       margin: 'auto',
     },
   },
-  expanded: {},
+  expanded: {
+    marginBottom: '10px!important'
+  },
 })(MuiAccordion);
 
 const AccordionSummary = withStyles({
@@ -48,63 +49,189 @@ const AccordionDetails = withStyles((theme) => ({
   },
 }))(MuiAccordionDetails);
 
-const descCloseGripBenchPress = "The close grip bench press differs from the traditional bench press in that you perform the press with a narrower grip. This position places emphasis on building strength and size in the triceps muscles, as well as the chest.";
+class NewListBack extends Component {
+  state = {
+    exercisesArray: null,
+    deadliftPeopleArray: null,
+    latpulldownPeopleArray: null,
+    seatedcablerowPeopleArray: null,
+    chestsupportedrowPeopleArray: null
+  }
 
-const descTricepPushdown = "The triceps pushdown is one of the best exercises for triceps development. While the versatile upper-body workout is usually done on a cable machine (a fixture at most gyms), you can also perform a version of the move at home or on the go using a resistance band.";
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: ''
+    };
+  }
 
+  componentDidMount(){
+    // get all exercises
+    db.collection('exercises-back').get().then( snapshot => {
+        const exercisesArray = [];
+        snapshot.forEach( doc => {
+            const data = doc.data();
+            exercisesArray.push(data);
+        })
+        this.setState({exercisesArray: exercisesArray})
+    }).catch( error => console.log(error));
 
-const exercises = [{displayname: "Deadlift", linkname: "/exercises/close-grip-bench-press", panel: "panel1", imagelink: closegripbenchfoto, descr: descCloseGripBenchPress, users: [{ user: "Roy de Bie", weight: "8x 24kg - 8x 26kg - 6x 28kg"}, { user: "Lars Vermeer", weight: "8x 30kg - 8x 32kg - 6x 34kg"}, { user: "Martijn Creusen", weight: "8x 20kg - 8x 22kg - 6x 24kg"}]}, 
-                  {displayname: "Pull up", linkname: "/exercises/cable-rope-tricep-pushdown", panel: "panel2", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]}, 
-                  {displayname: "Bent-Over Row", linkname: "/exercises/lying-triceps-extension", panel: "panel3", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]}, 
-                  {displayname: "Chest Supported Row", linkname: "/exercises/tricep-dips", panel: "panel4", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                  {displayname: "Single-Arm Row", linkname: "/exercises/diamond-pushups", panel: "panel5", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                  {displayname: "Inverted Row", linkname: "/exercises/bench-dip", panel: "panel6", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                  {displayname: "Lat Pulldown", linkname: "/exercises/one-arm-overhead-extension", panel: "panel7", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                  {displayname: "Seated Cable Row", linkname: "/exercises/one-arm-overhead-extension", panel: "panel8", imagelink: triceppushdownfoto, descr: descTricepPushdown, users: [{ user: "Roy de Bie", weight: "24kg"}, { user: "Lars Vermeer", weight: "30kg"}]},
-                ]; 
+    // get users of deadlift
+    db.collection('exercises-back').doc('deadlift').collection('people').get().then( snapshot => {
+        const deadliftPeopleArray = [];
+        snapshot.forEach( doc => {
+            const data = doc.data();
+            deadliftPeopleArray.push(data);
+        })
+        this.setState({deadliftPeopleArray: deadliftPeopleArray})
+    }).catch( error => console.log(error));
 
-                
+    // get users of lat pulldown
+    db.collection('exercises-back').doc('lat-pulldown').collection('people').get().then( snapshot => {
+      const latpulldownPeopleArray = [];
+      snapshot.forEach( doc => {
+          const data = doc.data();
+          latpulldownPeopleArray.push(data);
+      })
+      this.setState({latpulldownPeopleArray: latpulldownPeopleArray})
+    }).catch( error => console.log(error));
 
+    // get users of seated cable row
+    db.collection('exercises-back').doc('seated-cable-row').collection('people').get().then( snapshot => {
+      const seatedcablerowPeopleArray = [];
+      snapshot.forEach( doc => {
+          const data = doc.data();
+          seatedcablerowPeopleArray.push(data);
+      })
+      this.setState({seatedcablerowPeopleArray: seatedcablerowPeopleArray})
+    }).catch( error => console.log(error));
 
-export default function NewListBack() {
-  const [expanded, setExpanded] = React.useState('');
-
-  const handleChange = (panel) => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : false);
-  };
-
-  const listItems = exercises.map((exercise) =>
-      
-      <div>
-        <Accordion square className="exerciseBlock" expanded={expanded === exercise.panel} onChange={handleChange(exercise.panel)} style={{border: 'none'}}>
-            <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" style={{paddingLeft: '25px'}}>
-            <Typography>{exercise.displayname}</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-                <Typography>
-                    <img src={exercise.imagelink} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br>
-                    {exercise.descr} <br></br><br></br>
-                    {exercise.users.map(function(user, index){
-                        return <div><b>{user.user}</b> drukt <br></br><b>{user.weight}</b><br></br><Divider /></div>;
-                    })}
-                </Typography>
-            </AccordionDetails>
-        </Accordion>
-        <Divider />
-      </div>
-  );
-
-  return (
-    <div>
-        <Typography variant="h6" style={{color: 'white'}}>
-            Back exercises
-        </Typography><br></br>
-
-        {listItems}
-
-        <br></br>
-        <br></br>
-        <br></br>
-    </div>
-  );
+    // get users of chest supported row
+    db.collection('exercises-back').doc('chest-supported-row').collection('people').get().then( snapshot => {
+      const chestsupportedrowPeopleArray = [];
+      snapshot.forEach( doc => {
+          const data = doc.data();
+          chestsupportedrowPeopleArray.push(data);
+      })
+      this.setState({chestsupportedrowPeopleArray: chestsupportedrowPeopleArray})
+    }).catch( error => console.log(error));
 }
+
+  render() {
+
+    const handleChange = (panel) => (event, newExpanded) => {
+      this.setState({expanded: newExpanded ? panel : false});
+    };
+
+    let count = 0;
+    const newData = this.state.exercisesArray && this.state.exercisesArray.map( (data) => {
+      count = count + 1;
+      return (
+          <div>
+            <div>
+              <Accordion className="exerciseBlock" expanded={this.state.expanded === count} onChange={handleChange(count)} style={{border: 'none'}}>
+                  <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" style={{paddingLeft: '25px'}}>
+                  <Typography>{data.name}</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                      <Typography>
+                      <img src={closegripbenchfoto} alt="not found" style={{width: '100%', height: 'auto'}}/><br></br>
+                      { 
+                          this.state.deadliftPeopleArray && 
+                          this.state.deadliftPeopleArray.map( exercise => {
+                              if(data.idname === "deadlift"){
+                                return (
+                                  <div>
+                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                  </div>
+                              )
+                              } else {
+                                return (
+                                  <div>
+                                     
+                                  </div>
+                              )
+                              }
+                          })
+                      }
+                      { 
+                          this.state.latpulldownPeopleArray && 
+                          this.state.latpulldownPeopleArray.map( exercise => {
+                              if(data.idname === "lat-pulldown"){
+                                return (
+                                  <div>
+                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                  </div>
+                              )
+                              } else {
+                                return (
+                                  <div>
+                                     
+                                  </div>
+                              )
+                              }
+                          })
+                      }
+                      { 
+                          this.state.seatedcablerowPeopleArray && 
+                          this.state.seatedcablerowPeopleArray.map( exercise => {
+                              if(data.idname === "seated-cable-row"){
+                                return (
+                                  <div>
+                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                  </div>
+                              )
+                              } else {
+                                return (
+                                  <div>
+                                     
+                                  </div>
+                              )
+                              }
+                          })
+                      }
+                      { 
+                          this.state.chestsupportedrowPeopleArray && 
+                          this.state.chestsupportedrowPeopleArray.map( exercise => {
+                              if(data.idname === "chest-supported-row"){
+                                return (
+                                  <div>
+                                      <p key={count}>{exercise.name} drukt <br></br>{exercise.reps1}x {exercise.weight1}kg | {exercise.reps2}x {exercise.weight2}kg | {exercise.reps3}x {exercise.weight3}kg </p>
+                                  </div>
+                              )
+                              } else {
+                                return (
+                                  <div>
+                                     
+                                  </div>
+                              )
+                              }
+                          })
+                      }
+                      </Typography>
+                  </AccordionDetails>
+              </Accordion>
+            </div>    
+          </div>
+          
+      )
+      
+    });
+
+    return (
+      <div>
+          <Typography variant="h6" style={{color: 'white'}}>
+              Back exercises
+          </Typography><br></br>
+
+          {newData}
+
+          <br></br>
+          <br></br>
+          <br></br>
+      </div>
+    )
+  }
+}
+
+export default NewListBack;

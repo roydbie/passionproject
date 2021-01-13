@@ -14,6 +14,8 @@ import Chart2 from './components/Chart2';
 
 import TabsPersonal from './components/personal-page/TabsZelf';
 
+import ArrayTest from './components/ArrayTest';
+
 
 function App() {
   return (
@@ -37,7 +39,8 @@ function App() {
               <Chart2 />
             </Route>
             <Route exact path="/passionproject/extra">
-              <h1>extra</h1>
+              <br></br><br></br><br></br>
+              <ArrayTest/>
             </Route>
           </Switch>
           <BottomNav />
