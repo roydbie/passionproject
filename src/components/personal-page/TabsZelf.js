@@ -6,11 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 
-import PersonalTricep from './PersonalTricep';
-import PersonalBack from './PersonalBack';
-
 import ChestExercises from './ChestExercises';
 import BicepExercises from './BicepExercises';
+import TricepExercises from './TricepExercises';
+import BackExercises from './BackExercises';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -45,7 +44,7 @@ function TabPanel(props) {
     };
   };
 
-const TabsZelf = () => {
+const TabsZelfPersonal = () => {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -83,10 +82,16 @@ const TabsZelf = () => {
                   <BicepExercises />
                 </TabPanel>
                 <TabPanel value={value} index={2} className="tabpanel">
-                  <PersonalTricep/>
+                  <Typography variant="h6" style={{color: 'white'}}>
+                      Tricep exercises
+                  </Typography><br></br>
+                  <TricepExercises />
                 </TabPanel>
                 <TabPanel value={value} index={3} className="tabpanel">
-                  <PersonalBack />
+                  <Typography variant="h6" style={{color: 'white'}}>
+                      Back exercises
+                  </Typography><br></br>
+                  <BackExercises />
                 </TabPanel>
               </Paper>
 
@@ -95,4 +100,4 @@ const TabsZelf = () => {
     )
 }
 
-export default TabsZelf;
+export default TabsZelfPersonal;

@@ -1,5 +1,7 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { Component } from 'react';
+
+import { db } from '../../services/firebase';
+
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
@@ -8,98 +10,191 @@ import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import EditIcon from '@material-ui/icons/Edit';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    maxWidth: 752,
-  },
-  title: {
-    margin: theme.spacing(4, 0, 2),
-  },
-}));
+class BicepExercises extends Component {
+  state = {
+    exercisesArray: null,
+    dumbbellpressData: null,
+    inclinebenchpressData: null,
+    closegripchestpressData: null,
+    chestcablefliesData: null,
+    username: "Roy de Bie"
+  }
 
-export default function ChestExercises() {
-  const classes = useStyles();
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: ''
+    };
+  }
 
-  return (
-    <div className={classes.root}>
-        <Grid item xs={12} md={6}>
-          <div>
-            <List>
-                <ListItem className="listItemPersonal">
-                  <ListItemText 
-                    primary="Standing barbell curl"
-                    secondary="10x 40kg | 10x 60kg | 8x 70kg"
-                  />
-                  <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="delete">
-                      <EditIcon style={{color: 'white'}}/>
-                    </IconButton>
-                  </ListItemSecondaryAction>
-                </ListItem>
-                
-                <br></br>
-
-                <ListItem className="listItemPersonal">
-                  <ListItemText
-                    primary="Concentration curl"
-                    secondary="10x 40kg | 10x 60kg | 8x 70kg"
-                    color="secondary.main"
-                  />
-                  <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="delete">
-                      <EditIcon style={{color: 'white'}}/>
-                    </IconButton>
-                  </ListItemSecondaryAction>
-                </ListItem>
-
-                <br></br>
-
-                <ListItem className="listItemPersonal">
-                  <ListItemText
-                    primary="EZ-BAR preacher curl"
-                    secondary="10x 40kg | 10x 60kg | 8x 70kg"
-                    color="secondary.main"
-                  />
-                  <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="delete">
-                      <EditIcon style={{color: 'white'}}/>
-                    </IconButton>
-                  </ListItemSecondaryAction>
-                </ListItem>
-
-                <br></br>
-
-                <ListItem className="listItemPersonal">
-                  <ListItemText
-                    primary="Standing hammer curl"
-                    secondary="10x 40kg | 10x 60kg | 8x 70kg"
-                    color="secondary.main"
-                  />
-                  <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="delete">
-                      <EditIcon style={{color: 'white'}}/>
-                    </IconButton>
-                  </ListItemSecondaryAction>
-                </ListItem>
-
-                <br></br>
-
-                <ListItem className="listItemPersonal">
-                  <ListItemText
-                    primary="Incline dummbbell curl"
-                    secondary="10x 40kg | 10x 60kg | 8x 70kg"
-                    color="secondary.main"
-                  />
-                  <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="delete">
-                      <EditIcon style={{color: 'white'}}/>
-                    </IconButton>
-                  </ListItemSecondaryAction>
-                </ListItem>
-            </List>
-          </div>
-        </Grid>
-    </div>
-  );
+  componentDidMount(){
+    // get users of dumbbell press
+    db.collection('exercises-bicep').doc('cable-rope-hammer-curl').collection('people').get().then( snapshot => {
+        const dumbbellpressData = [];
+        const username = "Roy de Bie";
+        snapshot.forEach( doc => {
+            const data = doc.data();
+            if(data.name === username) {
+              dumbbellpressData.push(data);
+            }
+        })
+        this.setState({dumbbellpressData: dumbbellpressData})
+    }).catch( error => console.log(error));
+    // get users of incline bench press
+    db.collection('exercises-bicep').doc('concentration-curl').collection('people').get().then( snapshot => {
+      const inclinebenchpressData = [];
+      const username = "Roy de Bie";
+      snapshot.forEach( doc => {
+          const data = doc.data();
+          if(data.name === username) {
+            inclinebenchpressData.push(data);
+          }
+      })
+      this.setState({inclinebenchpressData: inclinebenchpressData})
+    }).catch( error => console.log(error));
+    // get users of close grip chest press
+    db.collection('exercises-bicep').doc('standing-barbell-curl').collection('people').get().then( snapshot => {
+      const closegripchestpressData = [];
+      const username = "Roy de Bie";
+      snapshot.forEach( doc => {
+          const data = doc.data();
+          if(data.name === username) {
+            closegripchestpressData.push(data);
+          }
+      })
+      this.setState({closegripchestpressData: closegripchestpressData})
+    }).catch( error => console.log(error));
+    // get users of chest cable flies
+    db.collection('exercises-bicep').doc('standing-hammer-curl').collection('people').get().then( snapshot => {
+      const chestcablefliesData = [];
+      const username = "Roy de Bie";
+      snapshot.forEach( doc => {
+          const data = doc.data();
+          if(data.name === username) {
+            chestcablefliesData.push(data);
+          }
+      })
+      this.setState({chestcablefliesData: chestcablefliesData})
+    }).catch( error => console.log(error));
 }
+  
+
+  render() {
+
+    const newData1 = this.state.chestcablefliesData && this.state.chestcablefliesData.map( (data) => {
+      const dataString = data.reps1 + 'x ' + data.weight1 + 'kg | ' + data.reps2 + 'x ' + data.weight2 + 'kg | ' + data.reps3 + 'x ' + data.weight3 + 'kg';
+      return (
+          <div>
+            <div>
+              <ListItem className="listItemPersonal">
+                <ListItemText
+                  primary={data.exercise}
+                  secondary={dataString}
+                  color="secondary.main"
+                />
+                <ListItemSecondaryAction>
+                  <IconButton edge="end" aria-label="delete">
+                    <EditIcon style={{color: 'white'}}/>
+                  </IconButton>
+                </ListItemSecondaryAction>
+              </ListItem>
+              <br></br>
+            </div>    
+          </div>
+      )
+    });
+
+    const newData2 = this.state.dumbbellpressData && this.state.dumbbellpressData.map( (data) => {
+      const dataString = data.reps1 + 'x ' + data.weight1 + 'kg | ' + data.reps2 + 'x ' + data.weight2 + 'kg | ' + data.reps3 + 'x ' + data.weight3 + 'kg';
+      return (
+          <div>
+            <div>
+              <ListItem className="listItemPersonal">
+                <ListItemText
+                  primary={data.exercise}
+                  secondary={dataString}
+                  color="secondary.main"
+                />
+                <ListItemSecondaryAction>
+                  <IconButton edge="end" aria-label="delete">
+                    <EditIcon style={{color: 'white'}}/>
+                  </IconButton>
+                </ListItemSecondaryAction>
+              </ListItem>
+              <br></br>
+            </div>    
+          </div>
+      )
+    });
+
+    const newData3 = this.state.inclinebenchpressData && this.state.inclinebenchpressData.map( (data) => {
+      const dataString = data.reps1 + 'x ' + data.weight1 + 'kg | ' + data.reps2 + 'x ' + data.weight2 + 'kg | ' + data.reps3 + 'x ' + data.weight3 + 'kg';
+      return (
+          <div>
+            <div>
+              <ListItem className="listItemPersonal">
+                <ListItemText
+                  primary={data.exercise}
+                  secondary={dataString}
+                  color="secondary.main"
+                />
+                <ListItemSecondaryAction>
+                  <IconButton edge="end" aria-label="delete">
+                    <EditIcon style={{color: 'white'}}/>
+                  </IconButton>
+                </ListItemSecondaryAction>
+              </ListItem>
+              <br></br>
+            </div>    
+          </div>
+      )
+    });
+
+    const newData4 = this.state.closegripchestpressData && this.state.closegripchestpressData.map( (data) => {
+      const dataString = data.reps1 + 'x ' + data.weight1 + 'kg | ' + data.reps2 + 'x ' + data.weight2 + 'kg | ' + data.reps3 + 'x ' + data.weight3 + 'kg';
+      return (
+          <div>
+            <div>
+              <ListItem className="listItemPersonal">
+                <ListItemText
+                  primary={data.exercise}
+                  secondary={dataString}
+                  color="secondary.main"
+                />
+                <ListItemSecondaryAction>
+                  <IconButton edge="end" aria-label="delete">
+                    <EditIcon style={{color: 'white'}}/>
+                  </IconButton>
+                </ListItemSecondaryAction>
+              </ListItem>
+              <br></br>
+            </div>    
+          </div>
+      )
+    });
+
+
+    return (
+      <div>
+        <div style={{flexGrow: 1, maxWidth: 752}}>
+          <Grid item xs={12} md={6}>
+            <div>
+              <List>
+                {newData1}
+                {newData2}
+                {newData3}
+                {newData4}
+              </List>
+            </div>
+          </Grid>
+        </div>
+
+        <br></br>
+        <br></br>
+        <br></br>
+      </div>
+    )
+  }
+}
+
+export default BicepExercises;

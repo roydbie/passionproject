@@ -4,17 +4,14 @@ import './App.css';
 import BottomNav from './components/BottomNav';
 import Header from './components/Header';
 import TabsZelf from './components/TabsZelf';
-import TabsHomepage from './components/TabsHomepage';
+import TabsZelfPersonal from './components/personal-page/TabsZelf';
+import HomepageCard from './components/HomepageCard';
 
 import { BrowserRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Chart from './components/Chart';
 import Chart2 from './components/Chart2';
-
-import TabsPersonal from './components/personal-page/TabsZelf';
-
-import ArrayTest from './components/ArrayTest';
 
 
 function App() {
@@ -24,11 +21,12 @@ function App() {
         <Router>
           <Header />
           <Switch>
-            <Route exact path="/passionproject/" >
-              <TabsHomepage />
+            <Route exact path="/passionproject/personal" >
+              <TabsZelfPersonal />
             </Route>
-            <Route exact path="/passionproject/personal">
-              <TabsPersonal />
+            <Route exact path="/passionproject/" >
+              <br></br><br></br><br></br><br></br><br></br><br></br>
+              <HomepageCard />
             </Route>
             <Route exact path="/passionproject/exercises">
               <TabsZelf />
@@ -40,7 +38,6 @@ function App() {
             </Route>
             <Route exact path="/passionproject/extra">
               <br></br><br></br><br></br>
-              <ArrayTest/>
             </Route>
           </Switch>
           <BottomNav />
