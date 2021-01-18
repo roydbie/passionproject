@@ -13,6 +13,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Chart from './components/Chart';
 import Chart2 from './components/Chart2';
 
+import Location from './components/Location';
+import Maps from './components/Maps';
+
 
 function App() {
   return (
@@ -38,6 +41,11 @@ function App() {
             </Route>
             <Route exact path="/passionproject/extra">
               <br></br><br></br><br></br>
+              <Location />
+            </Route>
+            <Route exact path="/passionproject/test">
+              <br></br><br></br><br></br><br></br><br></br><br></br>
+              <Maps />
             </Route>
           </Switch>
           <BottomNav />
