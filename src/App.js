@@ -41,7 +41,7 @@ function App() {
             </Route>
             <Route exact path="/passionproject/extra">
               <br></br><br></br><br></br>
-              <Location />
+              <Maps />
             </Route>
             <Route exact path="/passionproject/test">
               <br></br><br></br><br></br><br></br><br></br><br></br>

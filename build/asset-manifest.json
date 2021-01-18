@@ -1,18 +1,23 @@
 {
   "files": {
     "main.css": "/passionproject/static/css/main.1efa9f93.chunk.css",
-    "main.js": "/passionproject/static/js/main.5eb9e9a1.chunk.js",
-    "main.js.map": "/passionproject/static/js/main.5eb9e9a1.chunk.js.map",
-    "runtime-main.js": "/passionproject/static/js/runtime-main.00410c49.js",
-    "runtime-main.js.map": "/passionproject/static/js/runtime-main.00410c49.js.map",
-    "static/js/2.3d21a6c0.chunk.js": "/passionproject/static/js/2.3d21a6c0.chunk.js",
-    "static/js/2.3d21a6c0.chunk.js.map": "/passionproject/static/js/2.3d21a6c0.chunk.js.map",
-    "static/js/3.852c6819.chunk.js": "/passionproject/static/js/3.852c6819.chunk.js",
-    "static/js/3.852c6819.chunk.js.map": "/passionproject/static/js/3.852c6819.chunk.js.map",
+    "main.js": "/passionproject/static/js/main.6ed42bf1.chunk.js",
+    "main.js.map": "/passionproject/static/js/main.6ed42bf1.chunk.js.map",
+    "runtime-main.js": "/passionproject/static/js/runtime-main.617279c9.js",
+    "runtime-main.js.map": "/passionproject/static/js/runtime-main.617279c9.js.map",
+    "static/js/2.1a90108c.chunk.js": "/passionproject/static/js/2.1a90108c.chunk.js",
+    "static/js/2.1a90108c.chunk.js.map": "/passionproject/static/js/2.1a90108c.chunk.js.map",
+    "static/js/3.c6c7671a.chunk.js": "/passionproject/static/js/3.c6c7671a.chunk.js",
+    "static/js/3.c6c7671a.chunk.js.map": "/passionproject/static/js/3.c6c7671a.chunk.js.map",
     "index.html": "/passionproject/index.html",
     "static/css/main.1efa9f93.chunk.css.map": "/passionproject/static/css/main.1efa9f93.chunk.css.map",
-    "static/js/2.3d21a6c0.chunk.js.LICENSE.txt": "/passionproject/static/js/2.3d21a6c0.chunk.js.LICENSE.txt",
+    "static/js/2.1a90108c.chunk.js.LICENSE.txt": "/passionproject/static/js/2.1a90108c.chunk.js.LICENSE.txt",
     "static/media/barbell-curl.b5aa8589.gif": "/passionproject/static/media/barbell-curl.b5aa8589.gif",
+    "static/media/bitmoji1.a5fbd904.png": "/passionproject/static/media/bitmoji1.a5fbd904.png",
+    "static/media/bitmoji2.b7f732b5.png": "/passionproject/static/media/bitmoji2.b7f732b5.png",
+    "static/media/bitmoji3.d4656eca.png": "/passionproject/static/media/bitmoji3.d4656eca.png",
+    "static/media/bitmoji4.f613d845.png": "/passionproject/static/media/bitmoji4.f613d845.png",
+    "static/media/bitmoji5.9144e259.png": "/passionproject/static/media/bitmoji5.9144e259.png",
     "static/media/cable-bicepcurl.70d92e75.gif": "/passionproject/static/media/cable-bicepcurl.70d92e75.gif",
     "static/media/cablerow.9f933420.gif": "/passionproject/static/media/cablerow.9f933420.gif",
     "static/media/chest-flies.f48ab8b6.gif": "/passionproject/static/media/chest-flies.f48ab8b6.gif",
@@ -30,9 +35,9 @@
     "static/media/tricep-pushdown.89fa081c.gif": "/passionproject/static/media/tricep-pushdown.89fa081c.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.00410c49.js",
-    "static/js/2.3d21a6c0.chunk.js",
+    "static/js/runtime-main.617279c9.js",
+    "static/js/2.1a90108c.chunk.js",
     "static/css/main.1efa9f93.chunk.css",
-    "static/js/main.5eb9e9a1.chunk.js"
+    "static/js/main.6ed42bf1.chunk.js"
   ]
 }
