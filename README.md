@@ -1,6 +1,6 @@
-# Battie Boys
+# Battie Boys - version 2 (Passion Project)
 
-Battie Boys is a Fitness app that stimulates to train/sport together. Don't you think the current fitness apps in the store are too focussed om personal results?
+Battie Boys is a Fitness app that stimulates to train/sport together. Don't you think the current fitness apps in the store are too focussed on personal results?
 Battie Boys tracks your personal gains but at the same time it tracks the gains from your best friends. 
 By doing this you will never be out bench pressed by your best mate!
 
