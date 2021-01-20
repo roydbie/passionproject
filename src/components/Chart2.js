@@ -12,7 +12,7 @@ class Chart2 extends Component {
                         label: 'Bench press weight x 8 reps',
                         data: [45, 50, 50, 45, 50, 55, 55, 60, 60, 65, 65, 70],
                         pointBackgroundColor: [
-                            '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860',
+                            '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0',
                         ],
                         backgroundColor: 'transparent',
                     }
@@ -27,7 +27,8 @@ class Chart2 extends Component {
                                 return value + ' kg';
                             },
                             beginAtZero:false,
-                            maxTicksLimit: 5
+                            maxTicksLimit: 5,
+                            fontColor: 'white'
                         },
                         gridLines: {
                             color: "rgba(0, 0, 0, 0)",
@@ -36,12 +37,16 @@ class Chart2 extends Component {
                     xAxes: [{
                         gridLines: {
                             color: "rgba(0, 0, 0, 0)",
+                        },
+                        ticks: {
+                            fontColor: 'white'
                         }
                     }]
                 },
                 title: {
                     display: true,
-                    text: 'Bench press weight x 8 reps'
+                    text: 'Bench press weight x 8 reps',
+                    fontColor: 'white'
                 },
                 legend: {
                     display: false

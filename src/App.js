@@ -45,7 +45,7 @@ function App() {
             </Route>
             <Route exact path="/passionproject/test">
               <br></br><br></br><br></br><br></br><br></br><br></br>
-              <Maps />
+              <Location />
             </Route>
           </Switch>
           <BottomNav />

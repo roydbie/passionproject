@@ -1,6 +1,6 @@
-import React, { Children } from 'react';
+import React from 'react';
 import GoogleMapReact from 'google-map-react';
-import Bitmoji1 from '../images/bitmoji1.png';
+import Bitmoji1 from '../images/bitmoji1kopie.png';
 import Bitmoji2 from '../images/bitmoji2.png';
 import Bitmoji3 from '../images/bitmoji3.png';
 import Bitmoji4 from '../images/bitmoji4.png';

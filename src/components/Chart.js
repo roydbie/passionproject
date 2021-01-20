@@ -12,7 +12,7 @@ class Chart extends Component {
                         label: 'Bicep curl weight x 8 reps',
                         data: [8, 8, 8, 8, 8, 10, 10, 10, 10, 12, 12, 12],
                         pointBackgroundColor: [
-                            '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860', '#009860',
+                            '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0', '#39D1E0',
                         ],
                         backgroundColor: 'transparent',
                     }
@@ -27,7 +27,8 @@ class Chart extends Component {
                                 return value + ' kg';
                             },
                             beginAtZero:false,
-                            maxTicksLimit: 5
+                            maxTicksLimit: 5,
+                            fontColor: 'white'
                         },
                         gridLines: {
                             color: "rgba(0, 0, 0, 0)",
@@ -36,12 +37,16 @@ class Chart extends Component {
                     xAxes: [{
                         gridLines: {
                             color: "rgba(0, 0, 0, 0)",
-                        }
+                        },
+                        ticks: {
+                            fontColor: 'white'
+                        },
                     }]
                 },
                 title: {
                     display: true,
-                    text: 'Bicep curl weight x 8 reps'
+                    text: 'Bicep curl weight x 8 reps',
+                    fontColor: 'white'
                 },
                 legend: {
                     display: false
